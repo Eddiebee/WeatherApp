@@ -46,7 +46,7 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   androidSafeArea: {
     flex: 1,
-    paddingTop: StatusBar.height || 0,
+    // paddingTop: StatusBar.height || 0,
     backgroundColor: "pink",
   },
   container: {
