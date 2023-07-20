@@ -13,7 +13,7 @@ export const useGetWeather = () => {
   const handleFetchWeatherData = async () => {
     try {
       const res = await fetch(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}`
+        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.WEATHER_API_KEY}&units=metric`
       );
       const data = await res.json();
       setWeather(data);
@@ -33,7 +33,6 @@ export const useGetWeather = () => {
       }
 
       let location = await Location.getCurrentPositionAsync({});
-      console.log(location);
       setLat(location.coords.latitude);
       setLon(location.coords.longitude);
       await handleFetchWeatherData();
